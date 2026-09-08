@@ -1,114 +1,4 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>SpaceGuard</title>
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 30px;
-            background: #0b1020;
-            color: white;
-        }
-
-        h1 {
-            font-size: 40px;
-        }
-
-        .subtitle {
-            color: #aab3c5;
-        }
-
-        .dashboard {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            margin-top: 30px;
-        }
-
-        .card {
-            background: #171e33;
-            padding: 25px;
-            border-radius: 15px;
-        }
-
-        .card h2 {
-            margin-top: 0;
-        }
-
-        .value {
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-        button {
-            padding: 12px 20px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-    </style>
-</head>
-
-<body>
-
-    <h1>🚀 SpaceGuard</h1>
-
-    <p class="subtitle">
-        Space Weather Intelligence Dashboard
-    </p>
-
-    <div class="dashboard">
-
-        <div class="card">
-            <h2>☀️ Solar Activity</h2>
-            <p class="value" id="solarActivity">Loading...</p>
-        </div>
-
-        <div class="card">
-            <h2>🌍 Geomagnetic Activity</h2>
-            <p class="value" id="geomagnetic">Loading...</p>
-        </div>
-
-        <div class="card">
-            <h2>🛰️ Space Environment</h2>
-            <p class="value" id="spaceEnvironment">Loading...</p>
-        </div>
-
-        <div class="card">
-            <h2>⚠️ Current Risk</h2>
-            <p class="value" id="risk">Calculating...</p>
-        </div>
-
-    </div>
-
-    <br>
-
-    <button onclick="checkStatus()">Check SpaceGuard</button>
-
-    <script>
-
-        function checkStatus() {
-
-            document.getElementById("solarActivity").innerText =
-                "Monitoring";
-
-            document.getElementById("geomagnetic").innerText =
-                "Monitoring";
-
-            document.getElementById("spaceEnvironment").innerText =
-                "Monitoring";
-
-            document.getElementById("risk").innerText =
-                "Analyzing...";
-        }
-
-    </script>
-
-</body>
-</html><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -119,123 +9,103 @@
     <style>
         * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         body {
-            margin: 0;
             font-family: Arial, sans-serif;
-            background: #080d1c;
+            background: #050816;
             color: white;
+            min-height: 100vh;
         }
 
         header {
-            padding: 30px;
-            border-bottom: 1px solid #202943;
+            text-align: center;
+            padding: 40px 20px 25px;
         }
 
         header h1 {
-            margin: 0;
-            font-size: 38px;
+            font-size: 42px;
+            margin-bottom: 10px;
         }
 
         header p {
-            margin-top: 8px;
-            color: #9da8c0;
+            color: #9ca8c7;
+            font-size: 17px;
         }
 
-        main {
-            max-width: 1200px;
+        .container {
+            width: 90%;
+            max-width: 1100px;
             margin: auto;
-            padding: 30px;
-        }
-
-        .status {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 25px;
-            color: #aeb8cc;
-        }
-
-        .dot {
-            width: 10px;
-            height: 10px;
-            background: #35d07f;
-            border-radius: 50%;
         }
 
         .dashboard {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 20px;
+            margin-top: 25px;
         }
 
         .card {
-            background: #141b30;
-            border: 1px solid #252e48;
+            background: #0d1328;
+            border: 1px solid #202b4d;
             border-radius: 18px;
             padding: 25px;
-            min-height: 170px;
+            min-height: 150px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
         }
 
         .card h2 {
-            margin-top: 0;
             font-size: 20px;
+            margin-bottom: 20px;
         }
 
         .value {
             font-size: 30px;
             font-weight: bold;
-            margin-top: 25px;
         }
 
         .description {
-            color: #9da8c0;
-            line-height: 1.5;
+            margin-top: 10px;
+            color: #8e9bbd;
+            font-size: 14px;
         }
 
-        .risk {
-            border: 1px solid #6d5a20;
-        }
-
-        .risk .value {
-            color: #ffd35a;
+        .button-container {
+            text-align: center;
+            margin: 35px 0;
         }
 
         button {
-            margin-top: 25px;
-            padding: 13px 22px;
+            background: #2563eb;
+            color: white;
             border: none;
-            border-radius: 10px;
-            background: #ffffff;
-            color: #080d1c;
+            padding: 15px 30px;
+            border-radius: 12px;
             font-size: 16px;
-            font-weight: bold;
             cursor: pointer;
         }
 
         button:hover {
-            opacity: 0.85;
+            background: #1d4ed8;
         }
 
         footer {
             text-align: center;
             padding: 30px;
-            color: #68738b;
-            font-size: 14px;
+            color: #687493;
+            font-size: 13px;
         }
 
         @media (max-width: 700px) {
+            header h1 {
+                font-size: 32px;
+            }
+
             .dashboard {
                 grid-template-columns: 1fr;
-            }
-
-            header h1 {
-                font-size: 30px;
-            }
-
-            main {
-                padding: 20px;
             }
         }
     </style>
@@ -248,94 +118,67 @@
         <p>Space Weather Intelligence Dashboard</p>
     </header>
 
-    <main>
+    <main class="container">
 
-        <div class="status">
-            <div class="dot"></div>
-            <span>SpaceGuard is online</span>
-        </div>
-
-        <div class="dashboard">
+        <section class="dashboard">
 
             <div class="card">
                 <h2>☀️ Solar Activity</h2>
-
-                <p class="description">
-                    Monitoring activity coming from the Sun.
-                </p>
-
                 <div class="value" id="solarActivity">
-                    Waiting for data
+                    Loading...
+                </div>
+                <div class="description">
+                    Latest solar flux measurement
                 </div>
             </div>
 
             <div class="card">
                 <h2>🌍 Geomagnetic Activity</h2>
-
-                <p class="description">
-                    Monitoring disturbances in Earth's magnetic field.
-                </p>
-
                 <div class="value" id="geomagnetic">
-                    Waiting for data
+                    Loading...
+                </div>
+                <div class="description">
+                    Latest planetary K-index
                 </div>
             </div>
 
             <div class="card">
                 <h2>🛰️ Space Environment</h2>
-
-                <p class="description">
-                    Monitoring conditions that can affect spacecraft.
-                </p>
-
                 <div class="value" id="spaceEnvironment">
-                    Waiting for data
+                    Loading...
+                </div>
+                <div class="description">
+                    Current space-weather environment
                 </div>
             </div>
 
-            <div class="card risk">
+            <div class="card">
                 <h2>⚠️ Current Risk</h2>
-
-                <p class="description">
-                    SpaceGuard's current assessment.
-                </p>
-
                 <div class="value" id="risk">
-                    Not calculated
+                    Analyzing...
+                </div>
+                <div class="description">
+                    Educational SpaceGuard risk assessment
                 </div>
             </div>
 
-        </div>
+        </section>
 
-        <button onclick="checkStatus()">
-            Check SpaceGuard
-        </button>
+        <div class="button-container">
+            <button onclick="checkStatus()">
+                Check SpaceGuard
+            </button>
+        </div>
 
     </main>
 
     <footer>
-        SpaceGuard — NASA Space Apps Project
+        SpaceGuard uses public space-weather data.
+        <br>
+        Not an official NASA forecast.
     </footer>
 
-    <script>
-
-        function checkStatus() {
-
-            document.getElementById("solarActivity").innerText =
-                "Monitoring";
-
-            document.getElementById("geomagnetic").innerText =
-                "Monitoring";
-
-            document.getElementById("spaceEnvironment").innerText =
-                "Monitoring";
-
-            document.getElementById("risk").innerText =
-                "Analyzing...";
-
-        }
-
-    </script>
+    <script src="script.js"></script>
 
 </body>
 </html>
